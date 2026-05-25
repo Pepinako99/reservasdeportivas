@@ -13,6 +13,7 @@ import java.util.List;
 import models.Reserva;
 
 public class ReservaAdapter extends BaseAdapter {
+    //Uso esto para que al pulsar Cancelar, para saber que Reserva en concreto estoy cancelando.
     public interface OnCancelarClick {
         void onClick(Reserva reserva);
     }
@@ -24,26 +25,23 @@ public class ReservaAdapter extends BaseAdapter {
 
     public ReservaAdapter(Context contexto, List<Reserva> lista, OnCancelarClick listener) {
         this.contexto = contexto;
-        this.lista    = lista;
+        this.lista = lista;
         this.listener = listener;
         this.inflater = LayoutInflater.from(contexto);
     }
 
     @Override
     public int getCount() {
-
         return lista.size();
     }
 
     @Override
     public Object getItem(int position) {
-
         return lista.get(position);
     }
 
     @Override
     public long getItemId(int position) {
-
         return position;
     }
 
@@ -57,11 +55,11 @@ public class ReservaAdapter extends BaseAdapter {
         Reserva r = lista.get(position);
 
         TextView tvInstalacion = convertView.findViewById(R.id.tvInstalacion);
-        TextView tvTipo        = convertView.findViewById(R.id.tvTipo);
-        TextView tvFecha       = convertView.findViewById(R.id.tvFecha);
-        TextView tvHora        = convertView.findViewById(R.id.tvHora);
-        TextView tvImporte     = convertView.findViewById(R.id.tvImporte);
-        Button   btnCancelar   = convertView.findViewById(R.id.btnCancelar);
+        TextView tvTipo = convertView.findViewById(R.id.tvTipo);
+        TextView tvFecha = convertView.findViewById(R.id.tvFecha);
+        TextView tvHora = convertView.findViewById(R.id.tvHora);
+        TextView tvImporte = convertView.findViewById(R.id.tvImporte);
+        Button btnCancelar = convertView.findViewById(R.id.btnCancelar);
 
         tvInstalacion.setText(r.getNombreInstalacion());
         //Muesta el tipo de instlación en mayusculas, si es null pone un texto vacío.

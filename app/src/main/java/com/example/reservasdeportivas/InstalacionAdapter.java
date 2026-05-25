@@ -14,6 +14,8 @@ import models.Instalacion;
 
 public class InstalacionAdapter extends BaseAdapter {
 
+    //Al igual que en el otro Adapter, uso esto para que al seleccionar cualquier Instalación, abra la Activity de Horario
+    //con la información específica de esa instalación.
     public interface OnInstalacionClick {
         void onClick(Instalacion instalacion);
     }
@@ -25,26 +27,23 @@ public class InstalacionAdapter extends BaseAdapter {
 
     public InstalacionAdapter(Context contexto, List<Instalacion> lista, OnInstalacionClick listener) {
         this.contexto  = contexto;
-        this.lista     = lista;
-        this.listener  = listener;
-        this.inflater  = LayoutInflater.from(contexto);
+        this.lista = lista;
+        this.listener = listener;
+        this.inflater = LayoutInflater.from(contexto);
     }
 
     @Override
     public int getCount() {
-
         return lista.size();
     }
 
     @Override
     public Object getItem(int position) {
-
         return lista.get(position);
     }
 
     @Override
     public long getItemId(int position) {
-
         return position;
     }
 
@@ -57,11 +56,11 @@ public class InstalacionAdapter extends BaseAdapter {
 
         Instalacion inst = lista.get(position);
 
-        ImageView ivIcono       = convertView.findViewById(R.id.ivIcono);
-        TextView  tvNombre      = convertView.findViewById(R.id.tvNombre);
-        TextView  tvTipo        = convertView.findViewById(R.id.tvTipo);
-        TextView  tvPrecio      = convertView.findViewById(R.id.tvPrecio);
-        TextView  tvDescripcion = convertView.findViewById(R.id.tvDescripcion);
+        ImageView ivIcono = convertView.findViewById(R.id.ivIcono);
+        TextView tvNombre = convertView.findViewById(R.id.tvNombre);
+        TextView tvTipo = convertView.findViewById(R.id.tvTipo);
+        TextView tvPrecio = convertView.findViewById(R.id.tvPrecio);
+        TextView tvDescripcion = convertView.findViewById(R.id.tvDescripcion);
 
         tvNombre.setText(inst.getNombre());
         tvTipo.setText(inst.getTipo().toUpperCase());

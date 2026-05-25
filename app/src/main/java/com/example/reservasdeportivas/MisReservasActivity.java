@@ -20,7 +20,7 @@ public class MisReservasActivity extends AppCompatActivity {
     private ListView lvReservas;
     private TextView tvSinReservas;
 
-    private int    usuarioId;
+    private int usuarioId;
     private String usuarioNombre;
 
     @Override
@@ -28,18 +28,19 @@ public class MisReservasActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mis_reservas);
 
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        //Busca toolbar, lo pongo en la parte superior, añado el botón para ir hacia atras y le añado un titulo.
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setTitle("Mis reservas");
         }
-
-        usuarioId     = getIntent().getIntExtra("usuarioId", -1);
+        usuarioId = getIntent().getIntExtra("usuarioId", -1);
         usuarioNombre = getIntent().getStringExtra("usuarioNombre");
 
-        lvReservas    = findViewById(R.id.lvReservas);
+        lvReservas = findViewById(R.id.lvReservas);
         tvSinReservas = findViewById(R.id.tvSinReservas);
 
         cargarReservas();
@@ -49,9 +50,11 @@ public class MisReservasActivity extends AppCompatActivity {
         ReservaDAO dao = new ReservaDAO();
         List<Reserva> lista = dao.obtenerReservasUsuario(usuarioId);
 
+        //Si no hay reservas oculto la lista y dejo un mensaje.
         if (lista == null || lista.isEmpty()) {
             lvReservas.setVisibility(View.GONE);
             tvSinReservas.setVisibility(View.VISIBLE);
+            //Si hay lista, muestro la lista y oculto el texto.
         } else {
             tvSinReservas.setVisibility(View.GONE);
             lvReservas.setVisibility(View.VISIBLE);
@@ -64,6 +67,7 @@ public class MisReservasActivity extends AppCompatActivity {
     }
 
     private void confirmarCancelacion(Reserva reserva) {
+        //Muestro un dialogo con el resumente de la reserva a cancelar.
         new AlertDialog.Builder(this)
                 .setTitle("Cancelar reserva")
                 .setMessage(
@@ -81,18 +85,17 @@ public class MisReservasActivity extends AppCompatActivity {
                     boolean ok = dao.cancelarReserva(reserva.getIdReserva());
 
                     if (ok) {
-                        Toast.makeText(this, "Reserva cancelada",
-                                Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "Reserva cancelada", Toast.LENGTH_SHORT).show();
                         cargarReservas();
                     } else {
-                        Toast.makeText(this, "Error al cancelar la reserva",
-                                Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "Error al cancelar la reserva", Toast.LENGTH_SHORT).show();
                     }
                 })
                 .setNegativeButton("Mantener", null)
                 .show();
     }
 
+    //Al igual que en Horario, uso esto para el boton de volver hacia atras, porque creo que queda mejor.
     @Override
     public boolean onSupportNavigateUp() {
         finish();

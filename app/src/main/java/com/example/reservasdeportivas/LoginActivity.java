@@ -24,10 +24,10 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        etCorreo     = findViewById(R.id.etCorreo);
+        etCorreo = findViewById(R.id.etCorreo);
         etContrasena = findViewById(R.id.etContrasena);
-        btnLogin     = findViewById(R.id.btnLogin);
-        tvRegistro   = findViewById(R.id.tvRegistro);
+        btnLogin = findViewById(R.id.btnLogin);
+        tvRegistro = findViewById(R.id.tvRegistro);
 
         usuarioDAO = new UsuarioDAO();
 
@@ -39,7 +39,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void hacerLogin() {
-        String correo     = etCorreo.getText().toString().trim();
+        String correo = etCorreo.getText().toString().trim();
         String contrasena = etContrasena.getText().toString().trim();
 
         if(correo.isEmpty() || contrasena.isEmpty()){
@@ -51,7 +51,7 @@ public class LoginActivity extends AppCompatActivity {
 
         if (usuario != null) {
             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-            intent.putExtra("usuarioId",     usuario.getIdUsuario());
+            intent.putExtra("usuarioId", usuario.getIdUsuario());
             intent.putExtra("usuarioNombre", usuario.getNombre());
             startActivity(intent);
             finish();

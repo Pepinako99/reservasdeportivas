@@ -12,9 +12,9 @@ public class Instalacion {
 
     public Instalacion(int idInstalacion, String nombre, String tipo, String descripcion, double precioPorHora) {
         this.idInstalacion = idInstalacion;
-        this.nombre        = nombre;
-        this.tipo          = tipo;
-        this.descripcion   = descripcion;
+        this.nombre = nombre;
+        this.tipo = tipo;
+        this.descripcion = descripcion;
         this.precioPorHora = precioPorHora;
     }
 

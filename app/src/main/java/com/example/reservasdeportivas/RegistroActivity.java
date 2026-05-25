@@ -24,12 +24,12 @@ public class RegistroActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
 
-        etNombre     = findViewById(R.id.etNombre);
-        etCorreo     = findViewById(R.id.etCorreo);
+        etNombre = findViewById(R.id.etNombre);
+        etCorreo = findViewById(R.id.etCorreo);
         etContrasena = findViewById(R.id.etContrasena);
-        etConfirmar  = findViewById(R.id.etConfirmar);
+        etConfirmar = findViewById(R.id.etConfirmar);
         btnRegistrar = findViewById(R.id.btnRegistrar);
-        tvLogin      = findViewById(R.id.tvLogin);
+        tvLogin = findViewById(R.id.tvLogin);
 
         usuarioDAO = new UsuarioDAO();
 
@@ -41,10 +41,10 @@ public class RegistroActivity extends AppCompatActivity {
     }
 
     private void registrarUsuario() {
-        String nombre     = etNombre.getText().toString().trim();
-        String correo     = etCorreo.getText().toString().trim();
+        String nombre = etNombre.getText().toString().trim();
+        String correo = etCorreo.getText().toString().trim();
         String contrasena = etContrasena.getText().toString().trim();
-        String confirmar  = etConfirmar.getText().toString().trim();
+        String confirmar = etConfirmar.getText().toString().trim();
 
         if (nombre.isEmpty() || correo.isEmpty() || contrasena.isEmpty() || confirmar.isEmpty()) {
             Toast.makeText(this, "Completa todos los campos", Toast.LENGTH_SHORT).show();
@@ -65,7 +65,7 @@ public class RegistroActivity extends AppCompatActivity {
         if (id != -1) {
             Toast.makeText(this, "¡Registro exitoso!", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(RegistroActivity.this, MainActivity.class);
-            intent.putExtra("usuarioId",     id);
+            intent.putExtra("usuarioId", id);
             intent.putExtra("usuarioNombre", nombre);
             startActivity(intent);
             finish();

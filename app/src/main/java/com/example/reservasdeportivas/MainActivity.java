@@ -19,8 +19,8 @@ public class MainActivity extends AppCompatActivity {
 
     private ListView lvInstalaciones;
     private TextView tvBienvenida;
-    private int      usuarioId;
-    private String   usuarioNombre;
+    private int usuarioId;
+    private String usuarioNombre;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        usuarioId     = getIntent().getIntExtra("usuarioId", -1);
+        usuarioId = getIntent().getIntExtra("usuarioId", -1);
         usuarioNombre = getIntent().getStringExtra("usuarioNombre");
 
         tvBienvenida = findViewById(R.id.tvBienvenida);
@@ -46,17 +46,17 @@ public class MainActivity extends AppCompatActivity {
         List<Instalacion> lista = dao.obtenerTodasInstalaciones();
 
         if (lista.isEmpty()) {
-            Toast.makeText(this, "No hay instalaciones disponibles",
-                    Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "No hay instalaciones disponibles", Toast.LENGTH_SHORT).show();
         } else {
+            //Si hay instalaciones creo el Adaptador pasandole la lista.
             InstalacionAdapter adapter = new InstalacionAdapter(this, lista, instalacion -> {
                         Intent intent = new Intent(MainActivity.this, HorariosActivity.class);
-                        intent.putExtra("usuarioId",         usuarioId);
-                        intent.putExtra("usuarioNombre",     usuarioNombre);
-                        intent.putExtra("idInstalacion",     instalacion.getIdInstalacion());
+                        intent.putExtra("usuarioId", usuarioId);
+                        intent.putExtra("usuarioNombre", usuarioNombre);
+                        intent.putExtra("idInstalacion", instalacion.getIdInstalacion());
                         intent.putExtra("nombreInstalacion", instalacion.getNombre());
-                        intent.putExtra("tipoInstalacion",   instalacion.getTipo());
-                        intent.putExtra("precioPorHora",     instalacion.getPrecioPorHora());
+                        intent.putExtra("tipoInstalacion", instalacion.getTipo());
+                        intent.putExtra("precioPorHora", instalacion.getPrecioPorHora());
                         startActivity(intent);
                     }
             );
@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (id == R.id.action_mis_reservas) {
             Intent intent = new Intent(MainActivity.this, MisReservasActivity.class);
-            intent.putExtra("usuarioId",     usuarioId);
+            intent.putExtra("usuarioId", usuarioId);
             intent.putExtra("usuarioNombre", usuarioNombre);
             startActivity(intent);
             return true;

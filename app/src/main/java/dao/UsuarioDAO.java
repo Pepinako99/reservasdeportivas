@@ -17,7 +17,6 @@ public class UsuarioDAO {
     private ResultSet resultSet;
 
     public UsuarioDAO() {
-
         connection = conexionBBDD.conectarBBDD();
     }
 

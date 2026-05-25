@@ -6,9 +6,7 @@ import java.sql.DriverManager;
 public class ConexionBBDD {
 
     private Connection conexion = null;
-
-    // Cambia la IP si usas dispositivo real (pon la IP local de tu PC)
-    private static final String URL      = "jdbc:postgresql://10.0.2.2:5432/reservas_deprotivas";
+    private static final String URL = "jdbc:postgresql://10.0.2.2:5432/reservas_deprotivas";
     private static final String USUARIO  = "postgres";
     private static final String PASSWORD = "1234";
 

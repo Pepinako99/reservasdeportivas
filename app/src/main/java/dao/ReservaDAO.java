@@ -45,8 +45,8 @@ public class ReservaDAO {
                 "values(?,?,?,?,?,?,'activa') returning id_reserva;";
         try {
             prstmt = connection.prepareStatement(query);
-            prstmt.setInt(1,    reserva.getIdUsuario());
-            prstmt.setInt(2,    reserva.getIdInstalacion());
+            prstmt.setInt(1, reserva.getIdUsuario());
+            prstmt.setInt(2, reserva.getIdInstalacion());
             prstmt.setString(3, reserva.getFecha());
             prstmt.setString(4, reserva.getHoraInicio());
             prstmt.setString(5, reserva.getHoraFin());

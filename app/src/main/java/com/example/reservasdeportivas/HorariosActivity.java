@@ -47,19 +47,19 @@ public class HorariosActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        usuarioId         = getIntent().getIntExtra("usuarioId", -1);
-        usuarioNombre     = getIntent().getStringExtra("usuarioNombre");
-        idInstalacion     = getIntent().getIntExtra("idInstalacion", -1);
+        usuarioId = getIntent().getIntExtra("usuarioId", -1);
+        usuarioNombre = getIntent().getStringExtra("usuarioNombre");
+        idInstalacion = getIntent().getIntExtra("idInstalacion", -1);
         nombreInstalacion = getIntent().getStringExtra("nombreInstalacion");
-        tipoInstalacion   = getIntent().getStringExtra("tipoInstalacion");
-        precioPorHora     = getIntent().getDoubleExtra("precioPorHora", 15.0);
+        tipoInstalacion = getIntent().getStringExtra("tipoInstalacion");
+        precioPorHora = getIntent().getDoubleExtra("precioPorHora", 15.0);
 
-        tvInstalacion       = findViewById(R.id.tvInstalacion);
+        tvInstalacion = findViewById(R.id.tvInstalacion);
         tvFechaSeleccionada = findViewById(R.id.tvFechaSeleccionada);
-        tvResumen           = findViewById(R.id.tvResumen);
+        tvResumen = findViewById(R.id.tvResumen);
         btnSeleccionarFecha = findViewById(R.id.btnSeleccionarFecha);
-        btnReservar         = findViewById(R.id.btnReservar);
-        gridHorarios        = findViewById(R.id.gridHorarios);
+        btnReservar = findViewById(R.id.btnReservar);
+        gridHorarios = findViewById(R.id.gridHorarios);
 
         tvInstalacion.setText(nombreInstalacion + " · " + tipoInstalacion.toUpperCase());
 
@@ -70,14 +70,18 @@ public class HorariosActivity extends AppCompatActivity {
     private void mostrarDatePicker() {
         Calendar cal = Calendar.getInstance();
         DatePickerDialog dialog = new DatePickerDialog(this, (view, year, month, day) -> {
+                    //Guardo la fecha en formato Año-mes-día.
                     fechaSeleccionada = String.format("%04d-%02d-%02d", year, month + 1, day);
+                    //Muestro la fecha en formato Día-mes-año.
                     tvFechaSeleccionada.setText("Fecha: " + String.format("%02d/%02d/%04d", day, month + 1, year));
                     cargarHorarios();
                 },
+                //Abro el calendario mostrando el día de hoy por defecto.
                 cal.get(Calendar.YEAR),
                 cal.get(Calendar.MONTH),
                 cal.get(Calendar.DAY_OF_MONTH)
         );
+        //Bloqueo días enteriores para que no se puedan seleccionar, ya que no puedes hacer reservas en días anteriores.
         dialog.getDatePicker().setMinDate(System.currentTimeMillis() - 1000);
         dialog.show();
     }
@@ -99,9 +103,10 @@ public class HorariosActivity extends AppCompatActivity {
             btn.setText(hora);
             btn.setTextSize(12f);
 
+            //Defino el tamaño y posición del botón dentro del GridLayout
             GridLayout.LayoutParams params = new GridLayout.LayoutParams();
-            params.width      = 0;
-            params.height     = GridLayout.LayoutParams.WRAP_CONTENT;
+            params.width = 0;
+            params.height = GridLayout.LayoutParams.WRAP_CONTENT;
             params.columnSpec = GridLayout.spec(GridLayout.UNDEFINED, 1, 1f);
             params.setMargins(6, 6, 6, 6);
             btn.setLayoutParams(params);
@@ -121,6 +126,7 @@ public class HorariosActivity extends AppCompatActivity {
         }
     }
 
+    //Con este metodo controlo los colores en lo botones de las horas.
     private void toggleHora(String hora, Button btn) {
         if (horasSeleccionadas.contains(hora)) {
             horasSeleccionadas.remove(hora);
@@ -157,13 +163,16 @@ public class HorariosActivity extends AppCompatActivity {
         int numHoras = horasSeleccionadas.size();
         double total = numHoras * precioPorHora;
 
+        //Meto las horas seleccionadas en una lista y las ordeno de menor a mayor.
         List<String> ordenadas = new ArrayList<>(horasSeleccionadas);
         java.util.Collections.sort(ordenadas);
+        //Calculo la hora de inicio y de fin de la reserva
         String horaInicio = ordenadas.get(0);
         String ultimaHora = ordenadas.get(ordenadas.size() - 1);
         int h = Integer.parseInt(ultimaHora.split(":")[0]) + 1;
         String horaFin = String.format("%02d:00", h);
 
+        //Muestro un dialogo con el resumen de la reserva.
         new AlertDialog.Builder(this).setTitle("Confirmar reserva")
                 .setMessage("Instalación: " + nombreInstalacion + "\n" +
                             "Tipo: " + tipoInstalacion.toUpperCase() + "\n" +
@@ -182,6 +191,7 @@ public class HorariosActivity extends AppCompatActivity {
         boolean exito = true;
 
         for (String hora : ordenadas) {
+            //Calculo la hora final de la reserva.
             int hSig = Integer.parseInt(hora.split(":")[0]) + 1;
             String finHora = String.format("%02d:00", hSig);
 
@@ -193,6 +203,7 @@ public class HorariosActivity extends AppCompatActivity {
             r.setHoraFin(finHora);
             r.setImporte(precioPorHora);
 
+            //Inserta la reserva en la bbdd.
             if (dao.insertarReserva(r) == -1) {
                 exito = false;
                 break;
@@ -208,6 +219,7 @@ public class HorariosActivity extends AppCompatActivity {
         }
     }
 
+    //Maneja el boton de la fecha para ir hacía atras, uso esto ya que esteticamente se ve mejor
     @Override
     public boolean onSupportNavigateUp() {
         onBackPressed();
