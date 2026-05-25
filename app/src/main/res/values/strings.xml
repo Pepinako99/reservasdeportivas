@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">PistaYá</string>
+    <string name="action_mis_reservas">Mis reservas</string>
+    <string name="action_cerrar_sesion">Cerrar sesión</string>
+</resources>

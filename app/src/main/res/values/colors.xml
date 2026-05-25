@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="azul_oscuro">#0D2E4E</color>
+    <color name="azul_medio">#1565C0</color>
+    <color name="verde_principal">#4CAF50</color>
+    <color name="gris_texto">#757575</color>
+    <color name="hora_libre">#4CAF50</color>
+    <color name="hora_seleccionada">#FF9800</color>
+    <color name="hora_ocupada">#F44336</color>
+</resources>
