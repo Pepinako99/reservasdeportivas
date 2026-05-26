@@ -62,7 +62,42 @@ app/src/main/java/
 - **JDBC (Driver PostgreSQL)** → Conexión directa a la base de datos
 
 ---
-
+ 
+## ⚙️ Configuración de la base de datos
+ 
+La conexión se configura en `ConexionBBDD.java`:
+ 
+```java
+private static final String URL      = "jdbc:postgresql://10.0.2.2:5432/reservas_deprotivas";
+private static final String USUARIO  = "postgres";
+private static final String PASSWORD = "1234";
+```
+ 
+> ⚠️ La IP `10.0.2.2` es la dirección del emulador para conectar con `localhost` del PC. Si usas un dispositivo físico, cámbiala por la IP local de tu ordenador.
+ 
+---
+ 
+## 🚀 Cómo ejecutar el proyecto
+ 
+1. Clona el repositorio:
+```bash
+git clone https://github.com/Pepinako99/reservasdeportivas.git
+```
+2. Abre el proyecto en **Android Studio**
+3. Asegúrate de tener **PostgreSQL** instalado y en ejecución con la base de datos `reservas_deprotivas`
+4. Configura la IP en `ConexionBBDD.java` si usas dispositivo físico
+5. Ejecuta la app en el emulador o dispositivo
+---
+ 
+## 📋 Permisos requeridos
+ 
+```xml
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+```
+ 
+---
+ 
 ## 👤 Autor
-
+ 
 **Pedro** - [@Pepinako99](https://github.com/Pepinako99)
