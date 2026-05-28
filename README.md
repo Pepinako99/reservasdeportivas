@@ -84,7 +84,7 @@ private static final String PASSWORD = "1234";
 git clone https://github.com/Pepinako99/reservasdeportivas.git
 ```
 2. Abre el proyecto en **Android Studio**
-3. Asegúrate de tener **PostgreSQL** instalado y en ejecución con la base de datos `reservas_deprotivas`
+3. Ejecuta en pgAdmin, el Script que hay en este repositosio
 4. Configura la IP en `ConexionBBDD.java` si usas dispositivo físico
 5. Ejecuta la app en el emulador o dispositivo
 ---
