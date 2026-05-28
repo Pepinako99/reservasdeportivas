@@ -6,7 +6,7 @@ import java.sql.DriverManager;
 public class ConexionBBDD {
 
     private Connection conexion = null;
-    private static final String URL = "jdbc:postgresql://10.0.2.2:5432/reservas_deprotivas";
+    private static final String URL = "jdbc:postgresql://10.0.2.2:5432/pistaya";
     private static final String USUARIO  = "postgres";
     private static final String PASSWORD = "1234";
 

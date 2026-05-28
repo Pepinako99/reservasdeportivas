@@ -87,7 +87,7 @@
                             android:id="@+id/etCorreo"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="tucorreo@email.com"
+                            android:hint="tucorreo@gmail.com"
                             android:inputType="textEmailAddress"
                             android:imeOptions="actionNext" />
 
