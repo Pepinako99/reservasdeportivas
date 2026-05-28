@@ -1,5 +1,3 @@
-CREATE DATABASE pistaya;
-
 CREATE TABLE IF NOT EXISTS usuarios (
     id_usuario   SERIAL PRIMARY KEY,
     nombre       VARCHAR(100) NOT NULL,
