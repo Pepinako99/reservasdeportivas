@@ -34,11 +34,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Crear cuenta"
-                android:textSize="28sp"
-                android:textStyle="bold"
+                android:layout_marginBottom="4dp"
+                android:text="@string/titulo_registro"
                 android:textColor="@color/azul_oscuro"
-                android:layout_marginBottom="4dp" />
+                android:textSize="28sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -63,15 +63,15 @@
                     android:padding="24dp">
 
                     <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Nombre completo"
                         android:layout_marginBottom="14dp"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                        app:boxCornerRadiusTopStart="12dp"
-                        app:boxCornerRadiusTopEnd="12dp"
-                        app:boxCornerRadiusBottomStart="12dp"
+                        android:hint="@string/nombre"
                         app:boxCornerRadiusBottomEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusTopStart="12dp"
                         app:boxStrokeColor="@color/verde_principal"
                         app:startIconDrawable="@android:drawable/ic_menu_myplaces">
 
@@ -79,21 +79,21 @@
                             android:id="@+id/etNombre"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="textPersonName"
-                            android:imeOptions="actionNext" />
+                            android:imeOptions="actionNext"
+                            android:inputType="textPersonName" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Correo electrónico"
                         android:layout_marginBottom="14dp"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                        app:boxCornerRadiusTopStart="12dp"
-                        app:boxCornerRadiusTopEnd="12dp"
-                        app:boxCornerRadiusBottomStart="12dp"
+                        android:hint="@string/correo"
                         app:boxCornerRadiusBottomEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusTopStart="12dp"
                         app:boxStrokeColor="@color/verde_principal"
                         app:startIconDrawable="@android:drawable/ic_dialog_email">
 
@@ -101,21 +101,21 @@
                             android:id="@+id/etCorreo"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="textEmailAddress"
-                            android:imeOptions="actionNext" />
+                            android:imeOptions="actionNext"
+                            android:inputType="textEmailAddress" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Contraseña (mín. 6 caracteres)"
                         android:layout_marginBottom="14dp"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                        app:boxCornerRadiusTopStart="12dp"
-                        app:boxCornerRadiusTopEnd="12dp"
-                        app:boxCornerRadiusBottomStart="12dp"
+                        android:hint="@string/contrasena"
                         app:boxCornerRadiusBottomEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusTopStart="12dp"
                         app:boxStrokeColor="@color/verde_principal"
                         app:passwordToggleEnabled="true"
                         app:startIconDrawable="@android:drawable/ic_lock_lock">
@@ -124,21 +124,21 @@
                             android:id="@+id/etContrasena"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="textPassword"
-                            android:imeOptions="actionNext" />
+                            android:imeOptions="actionNext"
+                            android:inputType="textPassword" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Confirmar contraseña"
                         android:layout_marginBottom="24dp"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                        app:boxCornerRadiusTopStart="12dp"
-                        app:boxCornerRadiusTopEnd="12dp"
-                        app:boxCornerRadiusBottomStart="12dp"
+                        android:hint="@string/confirmar_contrasena"
                         app:boxCornerRadiusBottomEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusTopStart="12dp"
                         app:boxStrokeColor="@color/verde_principal"
                         app:passwordToggleEnabled="true"
                         app:startIconDrawable="@android:drawable/ic_lock_lock">
@@ -147,8 +147,8 @@
                             android:id="@+id/etConfirmar"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="textPassword"
-                            android:imeOptions="actionDone" />
+                            android:imeOptions="actionDone"
+                            android:inputType="textPassword" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -156,10 +156,10 @@
                         android:id="@+id/btnRegistrar"
                         android:layout_width="match_parent"
                         android:layout_height="52dp"
-                        android:text="CREAR CUENTA"
+                        android:text="@string/btn_registro"
+                        android:textColor="@android:color/white"
                         android:textSize="15sp"
                         android:textStyle="bold"
-                        android:textColor="@android:color/white"
                         app:backgroundTint="@color/verde_principal"
                         app:cornerRadius="14dp" />
 
@@ -175,20 +175,20 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="¿Ya tienes cuenta? "
-                    android:textSize="14sp"
-                    android:textColor="@color/gris_texto" />
+                    android:text="@string/ya_tienes_cuenta"
+                    android:textColor="@color/gris_texto"
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/tvLogin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Inicia sesión"
-                    android:textSize="14sp"
-                    android:textColor="@color/verde_principal"
-                    android:textStyle="bold"
                     android:clickable="true"
-                    android:focusable="true" />
+                    android:focusable="true"
+                    android:text="@string/iniciar_sesion"
+                    android:textColor="@color/verde_principal"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
             </LinearLayout>
 
         </LinearLayout>

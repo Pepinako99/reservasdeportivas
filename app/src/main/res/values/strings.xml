@@ -39,13 +39,14 @@
     <string name="selecciona_instalacion">Selecciona una instalación para reservar</string>
 
     <!-- Horarios -->
+    <string name="instalacion_defecto">Pista A · PÁDEL</string>
     <string name="subtitulo_horarios">Selecciona fecha y horas disponibles</string>
-    <string name="fecha_reserva">Fecha de reserva</string>
+    <string name="fecha_reserva">📅 Fecha de reserva</string>
     <string name="seleccionar_fecha">Seleccionar fecha</string>
     <string name="libre">Libre</string>
     <string name="seleccionada">Seleccionada</string>
     <string name="ocupada">Ocupada</string>
-    <string name="horas_disponibles">Horas disponibles</string>
+    <string name="horas_disponibles">🕒 Horas disponibles</string>
     <string name="elige_horas">Selecciona las horas que quieres reservar</string>
     <string name="btn_confirmar">CONFIRMAR RESERVA</string>
 
@@ -58,11 +59,14 @@
     <string name="tipo_pista">PÁDEL</string>
     <string name="descripcion_pista">Pista exterior con iluminación nocturna</string>
     <string name="precio_hora">Precio por hora</string>
-    <string name="precio">15 €/hora</string>
+    <string name="precio_h">15 €/hora</string>
     <string name="ver_horarios">Ver horarios</string>
 
     <!-- Reserva -->
+    <string name="fecha_completa">📅 2025-06-15</string>
+    <string name="horario">🕒 10:00 - 11:00</string>
     <string name="importe">Importe</string>
+    <string name="precio">15 €</string>
     <string name="cancelar">Cancelar</string>
 
     <!-- Mensajes -->

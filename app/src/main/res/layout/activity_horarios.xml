@@ -58,18 +58,18 @@
                         android:id="@+id/tvInstalacion"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Pista A · PÁDEL"
+                        android:text="@string/instalacion_defecto"
+                        android:textColor="@color/azul_oscuro"
                         android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/azul_oscuro" />
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Selecciona fecha y horas disponibles"
-                        android:textSize="13sp"
+                        android:layout_marginTop="2dp"
+                        android:text="@string/subtitulo_horarios"
                         android:textColor="@color/gris_texto"
-                        android:layout_marginTop="2dp" />
+                        android:textSize="13sp" />
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -91,17 +91,17 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="📅  Fecha de reserva"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/fecha_reserva"
                         android:textColor="@color/azul_oscuro"
-                        android:layout_marginBottom="10dp" />
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btnSeleccionarFecha"
                         android:layout_width="match_parent"
                         android:layout_height="48dp"
-                        android:text="Seleccionar fecha"
+                        android:text="@string/seleccionar_fecha"
                         android:textColor="@android:color/white"
                         app:backgroundTint="@color/azul_medio"
                         app:cornerRadius="12dp"
@@ -142,39 +142,42 @@
                         android:layout_height="16dp"
                         android:background="@color/hora_libre"
                         android:layout_marginEnd="6dp" />
+
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Libre"
-                        android:textSize="12sp"
-                        android:textColor="@color/gris_texto" />
+                        android:text="@string/libre"
+                        android:textColor="@color/gris_texto"
+                        android:textSize="12sp" />
 
                     <View
                         android:layout_width="16dp"
                         android:layout_height="16dp"
                         android:background="@color/hora_seleccionada"
                         android:layout_marginEnd="6dp" />
+
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Seleccionada"
-                        android:textSize="12sp"
-                        android:textColor="@color/gris_texto" />
+                        android:text="@string/seleccionada"
+                        android:textColor="@color/gris_texto"
+                        android:textSize="12sp" />
 
                     <View
                         android:layout_width="16dp"
                         android:layout_height="16dp"
                         android:background="@color/hora_ocupada"
                         android:layout_marginEnd="6dp" />
+
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Ocupada"
-                        android:textSize="12sp"
-                        android:textColor="@color/gris_texto" />
+                        android:text="@string/ocupada"
+                        android:textColor="@color/gris_texto"
+                        android:textSize="12sp" />
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -196,11 +199,11 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="🕒  Horas disponibles"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
+                        android:layout_marginBottom="12dp"
+                        android:text="@string/horas_disponibles"
                         android:textColor="@color/azul_oscuro"
-                        android:layout_marginBottom="12dp" />
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
 
                     <GridLayout
                         android:id="@+id/gridHorarios"
@@ -230,21 +233,21 @@
                         android:id="@+id/tvResumen"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Selecciona las horas que quieres reservar"
-                        android:textSize="14sp"
-                        android:textColor="@color/azul_oscuro"
+                        android:layout_marginBottom="14dp"
                         android:gravity="center"
-                        android:layout_marginBottom="14dp" />
+                        android:text="@string/elige_horas"
+                        android:textColor="@color/azul_oscuro"
+                        android:textSize="14sp" />
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btnReservar"
                         android:layout_width="match_parent"
                         android:layout_height="52dp"
-                        android:text="CONFIRMAR RESERVA"
+                        android:enabled="false"
+                        android:text="@string/btn_confirmar"
+                        android:textColor="@android:color/white"
                         android:textSize="15sp"
                         android:textStyle="bold"
-                        android:textColor="@android:color/white"
-                        android:enabled="false"
                         app:backgroundTint="@color/verde_principal"
                         app:cornerRadius="14dp" />
 

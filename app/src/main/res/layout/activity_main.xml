@@ -46,18 +46,18 @@
                 android:id="@+id/tvBienvenida"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="¡Hola!"
+                android:text="@string/saludo"
+                android:textColor="@color/azul_oscuro"
                 android:textSize="22sp"
-                android:textStyle="bold"
-                android:textColor="@color/azul_oscuro" />
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Selecciona una instalación para reservar"
-                android:textSize="14sp"
+                android:layout_marginTop="2dp"
+                android:text="@string/selecciona_instalacion"
                 android:textColor="@color/gris_texto"
-                android:layout_marginTop="2dp" />
+                android:textSize="14sp" />
 
         </LinearLayout>
 
