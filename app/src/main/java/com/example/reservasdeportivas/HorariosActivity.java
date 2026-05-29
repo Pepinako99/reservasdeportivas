@@ -43,6 +43,7 @@ public class HorariosActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_horarios);
 
+        //Obtengo el toolbar del xml, hago vivible el menú y activo el boton de navegar hacia atras.
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -126,7 +127,7 @@ public class HorariosActivity extends AppCompatActivity {
         }
     }
 
-    //Con este metodo controlo los colores en lo botones de las horas.
+    //Con este metodo controlo los colores en los botones de las horas.
     private void toggleHora(String hora, Button btn) {
         if (horasSeleccionadas.contains(hora)) {
             horasSeleccionadas.remove(hora);
@@ -219,7 +220,7 @@ public class HorariosActivity extends AppCompatActivity {
         }
     }
 
-    //Maneja el boton de la fecha para ir hacía atras, uso esto ya que esteticamente se ve mejor
+    //Maneja el boton de la flecha y hace que vuelva a la pantalla anterior.
     @Override
     public boolean onSupportNavigateUp() {
         onBackPressed();

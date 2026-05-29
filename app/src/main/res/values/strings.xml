@@ -1,5 +1,94 @@
 <resources>
     <string name="app_name">PistaYá</string>
-    <string name="action_mis_reservas">Mis reservas</string>
-    <string name="action_cerrar_sesion">Cerrar sesión</string>
+
+    <!-- Menú -->
+    <string name="mis_reservas">Mis reservas</string>
+    <string name="cerrar_sesion">Cerrar sesión</string>
+
+    <!-- Imágenes -->
+    <string name="logo">Logo</string>
+    <string name="logo_app">Logo PistaYa</string>
+    <string name="img_instalacion">Imagen instalación</string>
+
+    <!-- Splash -->
+    <string name="slogan">RESERVÁ · JUGÁ · DISFRUTÁ</string>
+
+    <!-- Login -->
+    <string name="titulo_login">PistaYá</string>
+    <string name="subtitulo_login">Inicia sesión para reservar</string>
+    <string name="usuario_login">Correo o usuario</string>
+    <string name="hint_correo">tucorreo@gmail.com</string>
+    <string name="contrasena_login">Contraseña</string>
+    <string name="btn_login">INICIAR SESIÓN</string>
+    <string name="sin_cuenta">¿No tienes cuenta?</string>
+    <string name="registrate">Regístrate</string>
+
+    <!-- Registro -->
+    <string name="titulo_registro">Crear cuenta</string>
+    <string name="subtitulo_registro">Únete a PistaYá y empieza a reservar</string>
+    <string name="nombre">Nombre completo</string>
+    <string name="correo">Correo electrónico</string>
+    <string name="contrasena">Contraseña (mín. 6 caracteres)</string>
+    <string name="confirmar_contrasena">Confirmar contraseña</string>
+    <string name="btn_registro">CREAR CUENTA</string>
+    <string name="ya_tienes_cuenta">¿Ya tienes cuenta?</string>
+    <string name="iniciar_sesion">Inicia sesión</string>
+
+    <!-- Main -->
+    <string name="saludo">¡Hola!</string>
+    <string name="selecciona_instalacion">Selecciona una instalación para reservar</string>
+
+    <!-- Horarios -->
+    <string name="subtitulo_horarios">Selecciona fecha y horas disponibles</string>
+    <string name="fecha_reserva">Fecha de reserva</string>
+    <string name="seleccionar_fecha">Seleccionar fecha</string>
+    <string name="libre">Libre</string>
+    <string name="seleccionada">Seleccionada</string>
+    <string name="ocupada">Ocupada</string>
+    <string name="horas_disponibles">Horas disponibles</string>
+    <string name="elige_horas">Selecciona las horas que quieres reservar</string>
+    <string name="btn_confirmar">CONFIRMAR RESERVA</string>
+
+    <!-- Reservas -->
+    <string name="sin_reservas">No tienes reservas activas</string>
+    <string name="titulo_reservas">Mis reservas</string>
+
+    <!-- Instalaciones -->
+    <string name="nombre_pista">Pista A</string>
+    <string name="tipo_pista">PÁDEL</string>
+    <string name="descripcion_pista">Pista exterior con iluminación nocturna</string>
+    <string name="precio_hora">Precio por hora</string>
+    <string name="precio">15 €/hora</string>
+    <string name="ver_horarios">Ver horarios</string>
+
+    <!-- Reserva -->
+    <string name="importe">Importe</string>
+    <string name="cancelar">Cancelar</string>
+
+    <!-- Mensajes -->
+    <string name="campos_vacios">Completa todos los campos</string>
+    <string name="credenciales_error">Credenciales incorrectas</string>
+    <string name="contrasena_corta">La contraseña debe tener al menos 6 caracteres</string>
+    <string name="contrasenas_distintas">Las contraseñas no coinciden</string>
+    <string name="registro_ok">¡Registro exitoso!</string>
+    <string name="registro_error">Error al registrar. El correo puede estar en uso.</string>
+    <string name="sin_instalaciones">No hay instalaciones disponibles</string>
+    <string name="elige_fecha">Selecciona una fecha primero</string>
+    <string name="elige_hora">Selecciona al menos una hora</string>
+    <string name="reserva_ok">¡Reserva realizada con éxito! Total: </string>
+    <string name="reserva_error">Error al realizar la reserva</string>
+    <string name="cancelada">Reserva cancelada</string>
+    <string name="error_cancelar">Error al cancelar la reserva</string>
+    <string name="conexion_ok">Conexión exitosa a PistaYa</string>
+
+    <!-- Diálogos -->
+    <string name="titulo_confirmar">Confirmar reserva</string>
+    <string name="mensaje_confirmar">¿Deseas confirmar la reserva?</string>
+    <string name="titulo_cancelar">Cancelar reserva</string>
+    <string name="mensaje_cancelar">¿Deseas cancelar la reserva de </string>
+    <string name="instalacion">Instalación: </string>
+    <string name="tipo">Tipo: </string>
+    <string name="fecha">Fecha: </string>
+    <string name="horas">Horas: </string>
+    <string name="importe_total">Importe total: </string>
 </resources>

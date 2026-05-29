@@ -28,11 +28,11 @@ public class MisReservasActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mis_reservas);
 
-
+        //Obtengo el toolbar del xml, hago visible el menú y activo el boton de navegar hacia atras.
+        //Además, le cambio el titulo.
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        //Busca toolbar, lo pongo en la parte superior, añado el botón para ir hacia atras y le añado un titulo.
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setTitle("Mis reservas");
@@ -95,7 +95,7 @@ public class MisReservasActivity extends AppCompatActivity {
                 .show();
     }
 
-    //Al igual que en Horario, uso esto para el boton de volver hacia atras, porque creo que queda mejor.
+    //Al igual que en Horario, este es el método que hace que la fecha cambie a la pantalla anterior.
     @Override
     public boolean onSupportNavigateUp() {
         finish();
