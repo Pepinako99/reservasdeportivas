@@ -1,13 +1,3 @@
--- ============================================================
---  SCRIPT SQL – PistaYa / ReservasDeportivas
---  Base de datos PostgreSQL
---  Ejecutar en pgAdmin o con psql:
---    psql -U postgres -f script_reservas_deportivas.sql
--- ============================================================
-
--- ============================================================
--- TABLA: usuarios
--- ============================================================
 CREATE TABLE IF NOT EXISTS usuarios (
     id_usuario   SERIAL PRIMARY KEY,
     nombre       VARCHAR(100) NOT NULL,
@@ -16,9 +6,6 @@ CREATE TABLE IF NOT EXISTS usuarios (
     conf         VARCHAR(100)
 );
 
--- ============================================================
--- TABLA: instalaciones
--- ============================================================
 CREATE TABLE IF NOT EXISTS instalaciones (
     id_instalacion  SERIAL PRIMARY KEY,
     nombre          VARCHAR(150) NOT NULL,
@@ -27,9 +14,6 @@ CREATE TABLE IF NOT EXISTS instalaciones (
     precio_hora     NUMERIC(6,2) NOT NULL
 );
 
--- ============================================================
--- TABLA: reservas
--- ============================================================
 CREATE TABLE IF NOT EXISTS reservas (
     id_reserva      SERIAL PRIMARY KEY,
     id_usuario      INTEGER NOT NULL REFERENCES usuarios(id_usuario) ON DELETE CASCADE,
@@ -42,9 +26,6 @@ CREATE TABLE IF NOT EXISTS reservas (
     estado          VARCHAR(20) DEFAULT 'activa'
 );
 
--- ============================================================
--- DATOS INICIALES – Instalaciones deportivas
--- ============================================================
 INSERT INTO instalaciones (nombre, tipo, descripcion, precio_hora) VALUES
     ('Pista de Pádel 1',  'padel',      'Pista de pádel cubierta con iluminación LED.',         15.00),
     ('Pista de Pádel 2',  'padel',      'Pista de pádel cubierta con iluminación LED.',         15.00),
@@ -54,7 +35,4 @@ INSERT INTO instalaciones (nombre, tipo, descripcion, precio_hora) VALUES
     ('Campo Fútbol 7',    'futbol7',    'Campo de césped artificial para fútbol 7.',            25.00),
     ('Pabellón Basket',   'baloncesto', 'Pabellón con 2 canchas de baloncesto.',                13.00);
 
--- ============================================================
--- VERIFICACIÓN
--- ============================================================
 SELECT * FROM instalaciones;
