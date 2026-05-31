@@ -41,8 +41,8 @@ public class ReservaDAO {
     }
 
     public int insertarReserva(Reserva reserva) {
-        String query = "insert into reservas(id_usuario, id_instalacion, fecha, hora_inicio, hora_fin, importe, estado) " +
-                "values(?,?,?,?,?,?,'activa') returning id_reserva;";
+        String query = "insert into reservas(id_usuario, id_instalacion, fecha, hora_inicio, hora_fin, importe, nombre_ins, estado) " +
+                "values(?,?,?,?,?,?,?,'activa') returning id_reserva;";
         try {
             prstmt = connection.prepareStatement(query);
             prstmt.setInt(1, reserva.getIdUsuario());
@@ -51,6 +51,7 @@ public class ReservaDAO {
             prstmt.setString(4, reserva.getHoraInicio());
             prstmt.setString(5, reserva.getHoraFin());
             prstmt.setDouble(6, reserva.getImporte());
+            prstmt.setString(7, reserva.getNombreInstalacion());
             resultSet = prstmt.executeQuery();
             if (resultSet.next()) return resultSet.getInt("id_reserva");
         } catch (SQLException e) {

@@ -203,6 +203,7 @@ public class HorariosActivity extends AppCompatActivity {
             r.setHoraInicio(hora);
             r.setHoraFin(finHora);
             r.setImporte(precioPorHora);
+            r.setNombreInstalacion(nombreInstalacion);
 
             //Inserta la reserva en la bbdd.
             if (dao.insertarReserva(r) == -1) {

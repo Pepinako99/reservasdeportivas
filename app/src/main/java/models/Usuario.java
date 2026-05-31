@@ -6,6 +6,7 @@ public class Usuario {
     private String nombre;
     private String correo;
     private String contrasena;
+    private String conf;
 
     public Usuario() {}
 
@@ -14,6 +15,14 @@ public class Usuario {
         this.correo = correo;
         this.contrasena = contrasena;
     }
+
+    public Usuario(String nombre, String correo, String contrasena, String conf) {
+        this.nombre = nombre;
+        this.correo = correo;
+        this.contrasena = contrasena;
+        this.conf = conf;
+    }
+
 
     public int getIdUsuario() {
         return idUsuario;
@@ -31,6 +40,10 @@ public class Usuario {
         return contrasena;
     }
 
+    public String getConf() {
+        return conf;
+    }
+
     public void setIdUsuario(int idUsuario) {
         this.idUsuario = idUsuario;
     }
@@ -45,5 +58,9 @@ public class Usuario {
 
     public void setContrasena(String contrasena) {
         this.contrasena = contrasena;
+    }
+
+    public void setConf(String conf) {
+        this.conf = conf;
     }
 }

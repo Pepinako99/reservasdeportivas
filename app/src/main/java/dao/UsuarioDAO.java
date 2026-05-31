@@ -21,12 +21,13 @@ public class UsuarioDAO {
     }
 
     public int insertarUsuario(Usuario usuario) {
-        String query = "insert into usuarios(nombre, correo, contrasena) VALUES(?,?,?) RETURNING id_usuario;";
+        String query = "insert into usuarios(nombre, correo, contrasena,conf) VALUES(?,?,?,?) RETURNING id_usuario;";
         try {
             prstmt = connection.prepareStatement(query);
             prstmt.setString(1, usuario.getNombre());
             prstmt.setString(2, usuario.getCorreo());
             prstmt.setString(3, usuario.getContrasena());
+            prstmt.setString(4, usuario.getConf());
             resultSet = prstmt.executeQuery();
             if (resultSet.next()) return resultSet.getInt("id_usuario");
         } catch (SQLException e) {

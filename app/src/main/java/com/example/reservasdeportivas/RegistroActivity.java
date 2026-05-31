@@ -59,7 +59,7 @@ public class RegistroActivity extends AppCompatActivity {
             return;
         }
 
-        Usuario usuario = new Usuario(nombre, correo, contrasena);
+        Usuario usuario = new Usuario(nombre, correo, contrasena, confirmar);
         int id = usuarioDAO.insertarUsuario(usuario);
 
         if (id != -1) {
